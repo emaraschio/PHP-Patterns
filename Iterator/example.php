@@ -7,10 +7,10 @@ class User {
 	public $state;
 	public $zip;
 }
- 
+//las interfaces Iterator y Countable son propias de PHP 5.* en adelante 
 class User_Management implements Iterator, Countable {
 
-	private $users=array();
+	private $users = Array();
 	private $position=0;
  
 	public function current() {
@@ -39,8 +39,7 @@ class User_Management implements Iterator, Countable {
 }
 
 $iterator = new User_Management();
-foreach ($iterator as $index => $value)
-{
+foreach ($iterator as $index => $value) {
 	echo $value->address;
 }
 
@@ -56,5 +55,5 @@ for ($iterator->key(); $iterator->valid(); $iterator->next()) {
 	$value = $iterator->current();
 	echo $value->address;
 }
- 
 
+?> 
